@@ -8,8 +8,8 @@ leading to major shifts in designs (many of which I find more appealing than wha
 is pitched towards RL researchers, ML researchers would also find a lot of use as there is considerable overlap.
 
 A brief overview:
-- Basic Julia syntax and core concepts
-- Introduction to an RL interface
+- [Basic Julia syntax and core concepts](1-IntroductionToJulia.ipynb)
+- [Introduction to an RL interface](2-RLGlueInterface.ipynb)
 - Getting down and dirty with flux
 - Project structure and organization
 - Running experiments and saving data
@@ -43,7 +43,7 @@ The square bracket activates the "package manager mode" of the julia repl (there
 You can leave these modes through a backspace.
 The `add` command adds the package `IJulia` which contains the code needed to install the julia kernel. The build command installs the kernel. If you don't have
 jupyter already installed and on your path this will also install jupyter, but if you want to make sure to use an already installed version of jupyter you can consult
-(IJulia's Docs)[https://github.com/JuliaLang/IJulia.jl].
+[IJulia's Docs](https://github.com/JuliaLang/IJulia.jl).
 
 This has installed IJulia into your base environment. This will now be accessible to all your projects, which is a neat feature allowing julia projects to be 
 isolated from your workflow packages. This means you no longer have to enforce your workflow on others (wonderful)!
@@ -55,7 +55,7 @@ Next it is time to instantiate the project environment for the jupyter notebooks
 (RL-In-Julia)> instantiate
 ```
 
-This installs all the packages listed in the `Project.toml` and their dependencies (following the Compat rules listed).
+This installs all the packages listed in the [`Project.toml`](Project.toml) and their dependencies (following the Compat rules listed).
 
 Now we are ready to startup the jupyter instance and play with the notebooks. I personally like using jupyter Lab, but you can also use a notebook or nteract. 
 To start a jupyter instance in julia (with the RL-In-Julia project activated).
