@@ -16,6 +16,54 @@ A brief overview:
 - Advanced topics
 
 
+# Getting Started
+
+To get started using these notebooks you need a Julia installation of either Julia 1.3.x or Julia 1.4.x (either should work).
+I also recommend creating aliases or links to the julia executable in your path.
+You will also need to clone or download the repository how you choose. Because Julia uses environments we will have to do a bit
+of work to setup the environments (similar to Python), and this is a good chance to see why Julia is a good choice for reproducible
+science!
+
+First in the directory of the cloned repository start a Julia repl
+
+```bash
+./path/to/julia
+```
+
+You should see Julia startup and open a prompt. Now because we are using Jupyter we will need to install IJulia to get access to the julia kernel.
+Because the package manager for julia is built right into the language this is quite simple (note the square bracket is *not* a typo):
+
+```julia
+julia> ]
+(@v1.4)> add IJulia
+(@v1.4)> build IJulia
+```
+
+The square bracket activates the "package manager mode" of the julia repl (there are other modes also available including a shell mode accessible through `;`). 
+You can leave these modes through a backspace.
+The `add` command adds the package `IJulia` which contains the code needed to install the julia kernel. The build command installs the kernel. If you don't have
+jupyter already installed and on your path this will also install jupyter, but if you want to make sure to use an already installed version of jupyter you can consult
+(IJulia's Docs)[https://github.com/JuliaLang/IJulia.jl].
+
+This has installed IJulia into your base environment. This will now be accessible to all your projects, which is a neat feature allowing julia projects to be 
+isolated from your workflow packages. This means you no longer have to enforce your workflow on others (wonderful)!
+
+Next it is time to instantiate the project environment for the jupyter notebooks.
+
+```julia
+(@v1.4)> activate .
+(RL-In-Julia)> instantiate
+```
+
+This installs all the packages listed in the `Project.toml` and their dependencies (following the Compat rules listed).
+
+Now we are ready to startup the jupyter instance and play with the notebooks. I personally like using jupyter Lab, but you can also use a notebook or nteract. 
+To start a jupyter instance in julia (with the RL-In-Julia project activated).
+```julia
+julia> using IJulia
+julia> jupyterlab(;dir=".")
+```
+
 # License
 
 All code here is licensed under the [MIT License](https://opensource.org/licenses/MIT) and 
