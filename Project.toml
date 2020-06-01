@@ -1,4 +1,5 @@
 [deps]
+BenchmarkTools = "6e4b80f9-dd63-53aa-95a3-0cdb28fa8baf"
 Flux = "587475ba-b771-5e3f-ad9e-33799f191a9c"
 MinimalRLCore = "4557a151-568a-41c4-844f-9d8069264cea"
 Plots = "91a5bcdd-55d7-5caf-9e0b-520d859cae80"
