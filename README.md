@@ -64,6 +64,17 @@ julia> using IJulia
 julia> jupyterlab(;dir=".")
 ```
 
+# The Julia Ecosystem for ML and RL research
+
+There is a lot of really useful packages for RL and ML research in Julia. While this tutorial will be using the packages I've built (I'm quite biased in favor of these), that doesn't mean they are the best packages out there for your needs!
+
+One great example of the RL initiative in Julia is the JuliaReinforcementLearning group and their main packages [ReinforcementLearning.jl](https://github.com/JuliaReinforcementLearning/ReinforcementLearning.jl). They have a bunch of models implemented and a nice core framework for implementing and reproducing major results in Julia. Their work in creating bindings to [environments](https://github.com/JuliaReinforcementLearning/ReinforcementLearningEnvironments.jl) is also a great contribution to the ecosystem. You may ask, "If these are great packages, why don't you use them in your research". My answer is the same I had when I avoided Python packages like [DeepMind's Dopamine](https://github.com/google/dopamine) or [OpenAI Baselines](https://openai.com/blog/openai-baselines-dqn/). My research often don't conform well to these kinds of frameworks, and it is often easier to get something up and running with a light framework where I have more control over all the parts and more flexibility (thus [MinimalRLCore.jl](https://github.com/mkschleg/MinimalRLCore.jl)).
+
+There are two main packages for ANNs in Julia. The first is [Flux.jl](https://fluxml.ai). This is the premier deep learning package in Julia and used by a large portion of the community and what we will be using in this tutorial. There is also [Knet.jl](https://github.com/denizyuret/Knet.jl), which is a bit more feature rich (with flux fast approaching) but not written entirely in Julia (being more like Pytorch or Tensorflow). What makes Flux special is that it is written entirely in Julia, meaning you have access to every component and very easily write code which is as fast as the Flux base code in pure Julia. This creates an ecosystem where nothing is "first class" in the same sense as in Tensorflow or Pytorch. This has the potential to make development and deployment of new model types much quicker. Of course, being relatively new there are still some hiccups. But the package is very quickly hurtling towards 1.0 status bringing about a nice bit of stability.
+
+Flux also provides a handy list of packages they have found useful: [link](https://fluxml.ai/Flux.jl/stable/ecosystem/). I use several of these packages and have developed [some of my own](https://github.com/mkschleg/Reproduce.jl) around the types of experiments typically found in RL (i.e. parameter sweeps and the like). One thing to keep in mind is Julia's ecosystem is quite different than what you find in Python. Because Julia code can be efficient, you don't have to use Flux or Knet's version of things. This often leads to confusion to new users, as they expect Flux to provide the entire stack for logging and data management. Flux focuses on neural nets and auto-diff, and leaves these other needs to other smaller packages. This means you can often use the work flow that you like rather than being forced into your frameworks (potentially) narrow design.
+
+
 # License
 
 All code here is licensed under the [MIT License](https://opensource.org/licenses/MIT) and 
