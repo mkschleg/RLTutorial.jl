@@ -11,8 +11,8 @@ A brief overview:
 - [Basic Julia syntax and core concepts](1-IntroductionToJulia.ipynb)
 - [Introduction to an RL interface](2-RLGlueInterface.ipynb)
 - [Getting down and dirty with flux](3-Flux.ipynb)
-- Project structure and organization
 - Running experiments and saving data
+- Project structure and organization
 - Advanced topics
 
 
